@@ -4,7 +4,7 @@
 		"vectrors_file": "data/vectors.txt",
 		"idf_file": "data/IDF.txt",
 		"stopwords_file": "data/stopwords.txt",
-		"corpus_file": "/home/gbrokos/AlmosinoIR/data/allPubMedAbstracts.v4.json",
+		"corpus_file": "data/allPubMedAbstracts.json",
 		"test_file": "test/BioASQ-trainingDataset4b.json"
 	}
 }
