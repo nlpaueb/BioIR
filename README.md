@@ -7,12 +7,12 @@ This software accompanies the following paper and contains code for reproducing 
 
 # Instructions
 ##Contents
-* [Files format](https://github.com/nlpaueb/BioIR#files-format)
+* [Necessary Files](https://github.com/nlpaueb/BioIR#necessary-files)
 * [Experiments](https://github.com/nlpaueb/BioIR#experiments)
 * [Evaluation](https://github.com/nlpaueb/BioIR#evaluation)
-* [Execution example](https://github.com/nlpaueb/BioIR#execution-example)  
+* [Experiments example](https://github.com/nlpaueb/BioIR#experiments-example)  
 
-##Files format
+##Necessary Files
 In order to run these experiments, some files in a specific format, are needed:
 * WordEmbedding files in the BioASQ format:
  * **Types file** (types.txt)  -  contains a list of the vocabulary.
@@ -75,9 +75,9 @@ cd evaluation
 python evaluate [system results filepath]
 ```
 Evaluation measures will be printed on terminal.
-##Execution example  
+##Experiments example   
 In order to reproduce the experimental results described on the paper, you need to follow these steps:
-* Download the files described [here](https://github.com/nlpaueb/BioIR#files-format) (or create your own) and place them into the data folder.  
+* Download the files described [here](https://github.com/nlpaueb/BioIR#necessary-files) (or create your own) and place them into the data folder.  
 * Download the PubMed retrieval results file, and place it into the system_results folder:  
   https://drive.google.com/open?id=0B62bnH-apTfOS3Ruck9Ob3N1eUU  
 * You can then, reproduce the experiments described on the paper with the following commands:  
