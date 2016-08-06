@@ -17,12 +17,8 @@ In order to run these experiments, some files in a specific format, are needed:
 * WordEmbedding files in the BioASQ format:
  * **Types file** (types.txt)  -  contains a list of the vocabulary.
  * **Vectors file** (vectors.txt)  -  contains the vectors(embeddings), matching the types file line by line.  
-   You can download the embeddings provided by BioASQ, in the described format, from the following link:  
-   http://participants-area.bioasq.org/tools/BioASQword2vec/
 * **IDF file** (IDF.txt)  -  Each line consists of a word and its corresponding IDF score, delimited by space character.  
-  https://drive.google.com/open?id=0B62bnH-apTfObmNHX1VvQ3UwX1E
 * **Stop-words file** (stopwords.txt)  -  A list of stop-words  
-  https://drive.google.com/open?id=0B62bnH-apTfOQmdjNnJ1cG9mek0
 * **Dataset file**  (allPubMedAbstracts.json)  -  A json file containing the biomedical articles from PubMed (pmid, title and Abstract), with the following format:
 ```
 {  
@@ -38,12 +34,17 @@ In order to run these experiments, some files in a specific format, are needed:
   ]
 }
 ```
-* **Test file**  (BioASQ-trainingDataset4b.json)  -  A json file containing the biomedical question with a list of their relevant documents (pmids).
-  You can download this file from the following link (register required):  
-  http://participants-area.bioasq.org/Tasks/4b/trainingDataset/  
+* **Test file**  (BioASQ-trainingDataset4b.json)  -  A json file containing the biomedical question with a list of their relevant documents (pmids).  
+  
+You can download these files from the following links:  
 
-The above files should either placed in the data folder with the same naming as above, or you sould configure the config.json file with the new path/filename. 
-
+| File          | Download Link |
+| ------------- |:-------------:|
+| Types&Vectors file | http://participants-area.bioasq.org/tools/BioASQword2vec/ |
+| IDF file      |https://drive.google.com/open?id=0B62bnH-apTfObmNHX1VvQ3UwX1E|
+|Stop-words file|https://drive.google.com/open?id=0B62bnH-apTfOQmdjNnJ1cG9mek0|
+|Test file (register reqired)      |http://participants-area.bioasq.org/Tasks/4b/trainingDataset/|
+The above files should either placed in the data folder with the same naming as above. If you want to use your own files with the same formats, you sould configure the config.json file with the new path/filenames. 
 ##Experiments
 Software cosists of the following python excecutables:
 * **produce_centroids.py**  -  Procuces a numpy array with the centroids of the documents contained in the dataset file and stores in in the data folder.  
@@ -75,14 +76,17 @@ python evaluate [system results filepath]
 ```
 Evaluation measures will be printed on terminal.
 ##Execution example  
-
-You can reproduce the experiments described on the paper with the following commands:  
+In order to reproduce the experimental results described on the paper, you need to follow these steps:
+* Download the files described [here](https://github.com/nlpaueb/BioIR#files-format) (or create your own) and place them into the data folder.  
+* Download the PubMed retrieval results file, and place it into the system_results folder:  
+  https://drive.google.com/open?id=0B62bnH-apTfOS3Ruck9Ob3N1eUU  
+* You can then, reproduce the experiments described on the paper with the following commands:  
 
 ####Retrival
 ```
 python produce_centroids.py 
 python knn_retrieval.py data/CentIDF.npy
-python build_annoy_index.py data/CentIDF.npy 100
+python build_annoy_index.py data/CentIDF.npy
 python ann_retrieval.py data/CentIDF.npy.100Trees.annoy
 ```
 ####Reranking
