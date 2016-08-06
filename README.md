@@ -53,7 +53,7 @@ Numpy array shape: Number of Documents x Embedding dimensions)
 * **knn_retrieval.py**  -  Given a test file (questions with relevant judgments) and the centroids file previously produced by produce_centroids.py, knn_retrieval.py retrieves top-1000 documents based on cosine similarity between the question centroid and the document centroids and stores the results in the system_results file, in .json format.  
 ```python knn_retrieval.py [centroids npy filepath]```  
 * **build_annoy_index.py**  -  Given the centroids file produced by produce_centroids.py, builds an Approximate Nearest Neighbrors index file, using the annoy library.  
-```python build_annoy_index.py [centroids npy filepath] [Number of trees]```  
+```python build_annoy_index.py [centroids npy filepath]```  
 * **ann_retrieval.py**  -  Given a test file (questions with relevant judgments) and the index file previously built by build_annoy_index.py, ann_retrieval retrieves the approximate top-1000 documents based on cosine similarity between the question centroid and the document centroids and stores the results in the system_results file, in .json format.  
 ```python ann_retrieval.py [ANN index filepath]```  
 * **reranking.py**  -  Reranks the retrieved documents of a system, using a Relaxation of Word Mover's Distance. It produces three new  .json files for RWMD-Q, RWMD-D and RWMD-MAX and stores them in the system_results file, in .json format.  
