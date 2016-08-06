@@ -1,5 +1,4 @@
 import time, sys, random
-
 from annoy import AnnoyIndex
 from tools.get_centroid import *
 from tools.load_files import *
@@ -34,7 +33,7 @@ class ApproximateNearestNeighborsRetrieval:
                 print 'Multiplier: ' + str(mult)
                 search_k = self.n_trees * n_neighbors * mult
                 filename = '.'.join((self.test_file.split('/')[-1].split('.')[:-1]))
-                with open("test/" + str(filename) + ".json", 'r') as data_file:
+                with open(self.test_file, 'r') as data_file:
                     data = json.load(data_file)
                     qArray = []
                     for i in range(len(data["questions"])):

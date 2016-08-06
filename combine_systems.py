@@ -37,7 +37,9 @@ def combine_systems(sys1_file, sys2_file):
     directory = 'system_results/'
     if not os.path.exists(directory):
             os.makedirs(directory)
-    with open(directory + 'hybrid.json', 'w+') as outfile:
+    with open(directory + 'hybrid_' + '.'.join(sys1_file.split('/')[-1].split('.')[:-1]) + '.'
+                      + '.'.join(sys2_file.split('/')[-1].split('.')[:-1])
+                      + '.json', 'w+') as outfile:
         outfile.write(json.dumps({"questions":[ob.__dict__ for ob in q_array]}, indent=2))
 
 

@@ -6,7 +6,7 @@ This software accompanies the following paper and contains code for reproducing 
 
 
 # Instructions
-##Content
+##Contents
 * [Files format](https://github.com/nlpaueb/BioIR#files-format)
 * [Experiments](https://github.com/nlpaueb/BioIR#experiments)
 * [Evaluation](https://github.com/nlpaueb/BioIR#evaluation)

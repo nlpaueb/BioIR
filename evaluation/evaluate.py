@@ -117,5 +117,8 @@ if __name__ == '__main__':
         write_flag = sys.argv[2]
     else:
         write_flag = '-y'
-    rel_file='../test/BioASQ-trainingDataset4b.json'
+    f = open('../config.json', 'r')
+    data_cfg = json.load(f)
+    f.close()
+    rel_file = data_cfg["config"]["test_file"]
     evaluate(rel_file, sys.argv[1], write_flag)

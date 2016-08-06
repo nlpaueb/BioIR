@@ -18,7 +18,7 @@ def build_annoy_index(metric, input_filename, output_filename, n_trees):
 if __name__ == '__main__':
     metric = 'angular'
     input_filename = sys.argv[1]
-    n_trees = int(sys.argv[2])
+    n_trees = 100
     output_filename = input_filename + '.' + str(n_trees) + 'Trees' + '.annoy'
     print 'Input file: ' + input_filename
     print 'Index(output) file: ' + output_filename

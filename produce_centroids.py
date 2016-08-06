@@ -1,8 +1,4 @@
-import random
-import time
-
-import ijson
-
+import ijson, random, time
 from tools.get_centroid import *
 from tools.load_files import *
 

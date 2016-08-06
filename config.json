@@ -5,6 +5,6 @@
 		"idf_file": "data/IDF.txt",
 		"stopwords_file": "data/stopwords.txt",
 		"corpus_file": "data/allPubMedAbstracts.json",
-		"test_file": "test/BioASQ-trainingDataset4b.json"
+		"test_file": "data/BioASQ-trainingDataset4b.json"
 	}
 }
