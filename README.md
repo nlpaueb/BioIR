@@ -5,7 +5,13 @@ This software accompanies the following paper and contains code for reproducing 
 
 
 
-# Detailed Instructions
+# Instructions
+##Content
+* [Files format](https://github.com/nlpaueb/BioIR#files-format)
+* [Experiments](https://github.com/nlpaueb/BioIR#experiments)
+* [Evaluation](https://github.com/nlpaueb/BioIR#evaluation)
+* [Execution example](https://github.com/nlpaueb/BioIR#execution-example)  
+
 ##Files format
 In order to run these experiments, some files in a specific format, are needed:
 * WordEmbedding files in the BioASQ format:
