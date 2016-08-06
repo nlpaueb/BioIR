@@ -6,7 +6,7 @@ from collections import defaultdict
 from scipy.spatial.distance import euclidean
 from tools.Question import *
 from tools.load_files import *
-from tools.print_progress import *
+from tools.progress import *
 
 # clean for BioASQ
 bioclean = lambda t: re.sub('[.,?;*!%^&_+():-\[\]{}]', '', t.replace('"', '').replace('/', '').replace('\\', '').replace("'", '').strip().lower()).split()
@@ -57,7 +57,7 @@ class reranking:
         n_questions = len(data_q["questions"])
         for i in range(n_questions):
             #print i
-            printProgress (i, n_questions, prefix = '', suffix = '', decimals = 2, barLength = 100)
+            progress(i+1, n_questions, 'questions')
             q_id = data_q["questions"][i]["id"]
             q_body = data_q["questions"][i]["body"]
             q_retrieved = data_q["questions"][i]["retrieved"]

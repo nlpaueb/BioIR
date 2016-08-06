@@ -7,6 +7,7 @@ from tools.load_files import *
 from tools.split_seq import split_seq
 from tools.Question import *
 from tools.read_npy_chunk import *
+from tools.progress import *
 
 
 class NearestNeighborsRetrieval:
@@ -67,7 +68,7 @@ class NearestNeighborsRetrieval:
             q_arrays.append(self.get_chunk_nns(corpus_centroids, q_centroids, question_details, chunk))
 
             c += 1
-            print c
+            progress(c, len(chunks), 'chunks')
         self.reorder(q_arrays)
         return
 
