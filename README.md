@@ -6,11 +6,20 @@ This software accompanies the following paper and contains code for reproducing 
 
 # Instructions
 ##Contents
+* [Dependencies](https://github.com/nlpaueb/BioIR#dependencies)
 * [Necessary Files](https://github.com/nlpaueb/BioIR#necessary-files)
 * [Experiments](https://github.com/nlpaueb/BioIR#experiments)
 * [Evaluation](https://github.com/nlpaueb/BioIR#evaluation)
 * [Experiments example](https://github.com/nlpaueb/BioIR#experiments-example)  
 
+##Dependencies
+To use this python code, you will need:
+* Python 2.7
+* [numpy](http://www.numpy.org/)
+* [scipy](http://www.scipy.org/)
+* [scikit-learn](http://scikit-learn.org/stable/index.html)
+* [annoy](https://pypi.python.org/pypi/annoy)
+* [ijson](https://pypi.python.org/pypi/ijson)  
 ##Necessary Files
 In order to run these experiments, some files in a specific format, are needed:
 * Word embedding files in the BioASQ format:
