@@ -56,7 +56,7 @@ You can download these files from the following links:
 | Types and Vectors file | http://participants-area.bioasq.org/tools/BioASQword2vec/ |
 | IDF file      |https://drive.google.com/open?id=0B62bnH-apTfObmNHX1VvQ3UwX1E|
 |Stop-words file|https://drive.google.com/open?id=0B62bnH-apTfOQmdjNnJ1cG9mek0|
-|Test file (registration reqired)      |http://participants-area.bioasq.org/Tasks/4b/trainingDataset/|
+|Test file (registration required)      |http://participants-area.bioasq.org/Tasks/4b/trainingDataset/|
 The above files should be placed in the data folder with the same names as above; otherwise you need to change the config.json file. 
 ##Experiments
 Software cosists of the following python excecutables:
