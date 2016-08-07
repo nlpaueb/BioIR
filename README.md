@@ -30,20 +30,21 @@ In order to run these experiments, some files in a specific format, are needed:
 * **IDF file** (IDF.txt)  -  Each line consists of a word and its corresponding IDF score, delimited by a space character.  
 * **Stop-words file** (stopwords.txt)  -  A list of stop-words.  
 * **Dataset file**  (allPubMedAbstracts.json)  -  A json file containing the biomedical articles from PubMed (pmid, title and abstract), with the following format:
-```
-{  
-  "articles": [  
-    {
-      "pmid": "7614544",  
-      "title": "Safety of coronary ultrasound angioplasty: effects of sonication on in  
-       tact canine coronary arteries.",  
-      "abstractText": "The purpose of this work was to examine in vivo the safety of s  
-       onication in the coronary arteries in a live animal model...Thus, the data sug  
-       gest that transluminal coronary sonication exerts no overt adverse effects in vivo."  
-    }, ...
-  ]
-}
-```
+
+    ```
+    {  
+      "articles": [  
+        {
+          "pmid": "7614544",  
+          "title": "Safety of coronary ultrasound angioplasty: effects of sonication on in  
+           tact canine coronary arteries.",  
+          "abstractText": "The purpose of this work was to examine in vivo the safety of s  
+           onication in the coronary arteries in a live animal model...Thus, the data sug  
+           gest that transluminal coronary sonication exerts no overt adverse effects in vivo."  
+        }, ...
+      ]
+    }
+    ```
 * **Test file**  (BioASQ-trainingDataset4b.json)  -  A json file containing the biomedical question with a list of their relevant documents (pmids).  
   
 You can download these files from the following links:  
@@ -69,14 +70,15 @@ Numpy array shape: Number of Documents x Embedding dimensions
 * **reranking.py**  -  Reranks the retrieved documents of a system, using a Relaxation of Word Mover's Distance. It produces three new  .json files for RWMD-Q, RWMD-D and RWMD-MAX and stores them in the system_results file, in .json format.  
 ```python reranking.py [system results filepath]```  
 * **combine_systems.py**  - Takes two system results as input and combines them as follows:  
-```
-for each question:
-  if sys1 retrieved at least one document,
-    use sys1 retrieved documents
-  else
-    use sys2 retrieved documents
-```  
-```python combine_systems.py [sys_1 results filepath] [sys_2 results filepath]```  
+
+    ```
+    for each question:
+      if sys1 retrieved at least one document,
+        use sys1 retrieved documents
+      else
+        use sys2 retrieved documents
+    ```  
+    ```python combine_systems.py [sys_1 results filepath] [sys_2 results filepath]```  
 
 ##Evaluation  
 You can evaluate each system with the following commands:
