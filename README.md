@@ -20,6 +20,7 @@ To use this python code, you will need:
 * [scikit-learn](http://scikit-learn.org/stable/index.html)
 * [annoy](https://pypi.python.org/pypi/annoy)
 * [ijson](https://pypi.python.org/pypi/ijson)  
+Optionally install yajl2 backend for ijson, for significantly faster json parsing.  
 
 ##Necessary Files
 In order to run these experiments, some files in a specific format, are needed:
