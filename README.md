@@ -13,7 +13,7 @@ This software accompanies the following paper and contains code for reproducing 
 
 ##Necessary Files
 In order to run these experiments, some files in a specific format, are needed:
-* Word εmbedding files in the BioASQ format:
+* Word embedding files in the BioASQ format:
  * **Types file** (types.txt)  -  contains a list of the vocabulary.
  * **Vectors file** (vectors.txt)  -  contains the vectors (embeddings), matching the types file line by line.  
 * **IDF file** (IDF.txt)  -  Each line consists of a word and its corresponding IDF score, delimited by a space character.  
