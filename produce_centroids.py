@@ -6,10 +6,16 @@ __copyright__ = "Copyright (c) 2016, " + __author__
 __license__ = "3-clause BSD"
 __email__ = "g.brokos@gmail.com"
 
-import ijson, random, time
+import random, time
 from tools.get_centroid import *
 from tools.load_files import *
 
+try:
+    import ijson.backends.yajl2 as ijson
+    print 'Using yajl2 backend for ijson'
+except ImportError:
+    import ijson
+    print 'yajl2 backend for ijson not found. Using standard ijson.'
 
 class doc2cent:
 
