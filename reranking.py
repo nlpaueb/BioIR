@@ -7,7 +7,7 @@ __license__ = "3-clause BSD"
 __email__ = "g.brokos@gmail.com"
 
 from __future__ import division
-import ijson, json, re, sys
+import json, re, sys
 import numpy as np
 from collections import defaultdict
 from scipy.spatial.distance import euclidean
@@ -15,6 +15,12 @@ from tools.Question import *
 from tools.load_files import *
 from tools.progress import *
 
+try:
+    import ijson.backends.yajl2 as ijson
+    print 'Using yajl2 backend for ijson'
+except ImportError:
+    import ijson
+    print 'yajl2 backend for ijson not found. Using standard ijson.'
 
 # clean for BioASQ
 bioclean = lambda t: re.sub('[.,?;*!%^&_+():-\[\]{}]', '', t.replace('"', '').replace('/', '').replace('\\', '').replace("'", '').strip().lower()).split()
