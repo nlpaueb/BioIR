@@ -36,12 +36,12 @@ In order to run these experiments, some files in a specific format, are needed:
       "articles": [  
         {
           "pmid": "845329",  
-          "title": "This is the title of the artcile with pmid 845329",  
+          "title": "This is the title of the article with pmid 845329",  
           "abstractText": "This is the abstract of the article with pmid 845329"  
         },
         {
           "pmid": "437795",  
-          "title": "This is the title of the artcile with pmid 437795",  
+          "title": "This is the title of the article with pmid 437795",  
           "abstractText": "This is the abstract of the article with pmid 437795"
         },...
       ]
