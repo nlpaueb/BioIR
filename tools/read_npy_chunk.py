@@ -1,4 +1,8 @@
-import struct
+__author__ = "David Warde-Farley"
+__copyright__ = "Copyright (c) 2012 by " + __author__
+__license__ = "3-clause BSD"
+__email__ = "dwf@dwf.name"
+
 import numpy
 
 def read_npy_chunk(filename, start_row, num_rows):

@@ -6,8 +6,10 @@ __copyright__ = "Copyright (c) 2016, " + __author__
 __license__ = "3-clause BSD"
 __email__ = "g.brokos@gmail.com"
 
-import sys
+import math
 
-def progress(i, total, suffix):
-    sys.stdout.write('Progress: %d/%d %s completed.\r' % (i, total, suffix))
-    sys.stdout.flush()
+def split_list(x, n_chunks):
+    max_chunk_size = int(math.ceil(float(len(x))/float(n_chunks)))
+    chunks = []
+    [chunks.append(x[i:i+max_chunk_size]) for i in range(0, len(x), max_chunk_size)]
+    return chunks

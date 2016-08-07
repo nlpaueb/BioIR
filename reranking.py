@@ -1,12 +1,20 @@
+__author__ = ("Georgios-Ioannis Brokos, "
+              "Natural Language Processing Group, "
+              "Department of Informatics, "
+              "Athens University of Economics and Business, Greece.")
+__copyright__ = "Copyright (c) 2016, " + __author__
+__license__ = "3-clause BSD"
+__email__ = "g.brokos@gmail.com"
+
 from __future__ import division
-import json, re, sys, gc
-import ijson.backends.yajl2 as ijson
+import ijson, json, re, sys
 import numpy as np
 from collections import defaultdict
 from scipy.spatial.distance import euclidean
 from tools.Question import *
 from tools.load_files import *
 from tools.progress import *
+
 
 # clean for BioASQ
 bioclean = lambda t: re.sub('[.,?;*!%^&_+():-\[\]{}]', '', t.replace('"', '').replace('/', '').replace('\\', '').replace("'", '').strip().lower()).split()

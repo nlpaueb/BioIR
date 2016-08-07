@@ -1,10 +1,18 @@
+__author__ = ("Georgios-Ioannis Brokos, "
+              "Natural Language Processing Group, "
+              "Department of Informatics, "
+              "Athens University of Economics and Business, Greece.")
+__copyright__ = "Copyright (c) 2016, " + __author__
+__license__ = "3-clause BSD"
+__email__ = "g.brokos@gmail.com"
+
 import sys, time, random
 
 from sklearn.neighbors import NearestNeighbors
 
 from tools.get_centroid import *
 from tools.load_files import *
-from tools.split_seq import split_seq
+from tools.split_list import split_list
 from tools.Question import *
 from tools.read_npy_chunk import *
 from tools.progress import *
@@ -56,7 +64,7 @@ class NearestNeighborsRetrieval:
 
     def main(self):
 
-        chunks = split_seq(range(len(self.idmap)), self.n_chunks)
+        chunks = split_list(range(len(self.idmap)), self.n_chunks)
         q_centroids, question_details = self.load_questions_matrix()
         q_arrays = []
 
