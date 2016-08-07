@@ -9,8 +9,7 @@ import csv
 
 # TODO: Add Mean Average Precision (MAP) calculation.
 
-
-def evaluate(rel_file, retr_file, write_flag='-y'):
+def evaluate(rel_file, retr_file, write_flag):
     f = open(rel_file, 'r')
     data_rel = json.load(f)
     f.close()
@@ -116,7 +115,7 @@ if __name__ == '__main__':
     if len(sys.argv)==3:
         write_flag = sys.argv[2]
     else:
-        write_flag = '-y'
+        write_flag = '-n'
     f = open('../config.json', 'r')
     data_cfg = json.load(f)
     f.close()
