@@ -59,7 +59,7 @@ The above files should be placed in the data folder with the same names as above
 ##Experiments
 Software cosists of the following python excecutables:
 * **produce_centroids.py**  -  Produces a numpy array with the centroids of the documents contained in the dataset file and stores it in the data folder.  
-Numpy array shape: Number of Documents x Embedding dimensions  
+Numpy array shape: Number of Documents x Embedding Dimensions  
 ```python produce_centroids.py```
 * **knn_retrieval.py**  -  Given a test file (questions with relevant judgments) and the centroids file previously produced by produce_centroids.py, knn_retrieval.py retrieves the top-1000 documents based on cosine similarity between the question centroid and the document centroids and stores the results in the system_results file, in .json format.  
 ```python knn_retrieval.py [centroids npy filepath]```  
@@ -94,7 +94,7 @@ In order to reproduce the experimental results of the paper, you need to follow 
   https://drive.google.com/open?id=0B62bnH-apTfOS3Ruck9Ob3N1eUU  
 * You can then reproduce the experiments of the paper with the following commands:  
 
-####Retrival
+####Retrieval
 ```
 python produce_centroids.py 
 python knn_retrieval.py data/CentIDF.npy
