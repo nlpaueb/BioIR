@@ -115,11 +115,11 @@ python combine_systems.py system_results/PubMed_RWMD_Q.json system_results/CentI
 ####Evaluation
 ```
 cd evaluation
-python evaluate.py system_results/CentIDF.json
-python evaluate.py system_results/PubMed.json  
-python evaluate.py system_results/CentIDF_RWMD_Q.json
-python evaluate.py system_results/CentIDF_RWMD_D.json
-python evaluate.py system_results/PubMed_RWMD_Q.json
-python evaluate.py system_results/hybrid_PubMed_RWMD_Q.CentIDF_RWMD_Q.json
-python evaluate.py system_results/hybrid_PubMed_RWMD_Q.CentIDF_annoy_100_1000_10_RWMD_Q.json
+python evaluate.py ../system_results/CentIDF.json
+python evaluate.py ../system_results/PubMed.json  
+python evaluate.py ../system_results/CentIDF_RWMD_Q.json
+python evaluate.py ../system_results/CentIDF_RWMD_D.json
+python evaluate.py ../system_results/PubMed_RWMD_Q.json
+python evaluate.py ../system_results/hybrid_PubMed_RWMD_Q.CentIDF_RWMD_Q.json
+python evaluate.py ../system_results/hybrid_PubMed_RWMD_Q.CentIDF_annoy_100_1000_10_RWMD_Q.json
 ```
