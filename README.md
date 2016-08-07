@@ -35,13 +35,15 @@ In order to run these experiments, some files in a specific format, are needed:
     {  
       "articles": [  
         {
-          "pmid": "7614544",  
-          "title": "Safety of coronary ultrasound angioplasty: effects of sonication on in  
-           tact canine coronary arteries.",  
-          "abstractText": "The purpose of this work was to examine in vivo the safety of s  
-           onication in the coronary arteries in a live animal model...Thus, the data sug  
-           gest that transluminal coronary sonication exerts no overt adverse effects in vivo."  
-        }, ...
+          "pmid": "845329",  
+          "title": "This is the title of the artcile with pmid 845329",  
+          "abstractText": "This is the abstract of the article with pmid 845329"  
+        },
+        {
+          "pmid": "437795",  
+          "title": "This is the title of the artcile with pmid 437795",  
+          "abstractText": "This is the abstract of the article with pmid 437795"
+        },...
       ]
     }
     ```
