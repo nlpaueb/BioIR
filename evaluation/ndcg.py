@@ -1,4 +1,13 @@
 from __future__ import division
+
+__author__ = ("Georgios-Ioannis Brokos, "
+              "Natural Language Processing Group, "
+              "Department of Informatics, "
+              "Athens University of Economics and Business, Greece.")
+__copyright__ = "Copyright (c) 2016, " + __author__
+__license__ = "3-clause BSD"
+__email__ = "g.brokos@gmail.com"
+
 import numpy as np
 
 def ndcg(rel_docs, retr_docs):

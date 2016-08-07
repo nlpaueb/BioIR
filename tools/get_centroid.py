@@ -1,3 +1,5 @@
+from __future__ import division
+
 __author__ = ("Georgios-Ioannis Brokos, "
               "Natural Language Processing Group, "
               "Department of Informatics, "
@@ -6,11 +8,9 @@ __copyright__ = "Copyright (c) 2016, " + __author__
 __license__ = "3-clause BSD"
 __email__ = "g.brokos@gmail.com"
 
-from __future__ import division
 import numpy as np
 import json, re
 from collections import defaultdict
-
 
 # clean for BioASQ
 bioclean = lambda t: re.sub('[.,?;*!%^&_+():-\[\]{}]', '', t.replace('"', '').replace('/', '').replace('\\', '').replace("'", '').strip().lower()).split()

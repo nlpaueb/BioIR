@@ -1,3 +1,5 @@
+from __future__ import division
+
 __author__ = ("Georgios-Ioannis Brokos, "
               "Natural Language Processing Group, "
               "Department of Informatics, "
@@ -6,7 +8,6 @@ __copyright__ = "Copyright (c) 2016, " + __author__
 __license__ = "3-clause BSD"
 __email__ = "g.brokos@gmail.com"
 
-from __future__ import division
 import json, re, sys
 import numpy as np
 from collections import defaultdict
