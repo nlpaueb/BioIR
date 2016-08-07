@@ -1,13 +1,19 @@
 from __future__ import division
+
+__author__ = ("Georgios-Ioannis Brokos, "
+              "Natural Language Processing Group, "
+              "Department of Informatics, "
+              "Athens University of Economics and Business, Greece.")
+__copyright__ = "Copyright (c) 2016, " + __author__
+__license__ = "3-clause BSD"
+__email__ = "g.brokos@gmail.com"
+
 import json
 import sys
 from pr_rec import pr_rec
 from perfect_reranking import perfect_reranking
 from ndcg import ndcg
 import numpy as np
-import csv
-
-# TODO: Add Mean Average Precision (MAP) calculation.
 
 def evaluate(rel_file, retr_file, write_flag):
     f = open(rel_file, 'r')
@@ -27,6 +33,7 @@ def evaluate(rel_file, retr_file, write_flag):
 
     sumAIP = 0
     sumIP = np.zeros((1, 11))
+    sumAP = 0
 
     sum_prfAIP = 0
     sum_prfIP = np.zeros((1, 11))
@@ -57,9 +64,7 @@ def evaluate(rel_file, retr_file, write_flag):
             macro_precision += (n_common/n_retr_docs)
         if n_rel_docs != 0:
             macro_recall += (n_common/n_rel_docs)
-
-        curve, int_curve = pr_rec(rel_docs, retr_docs)
-
+        curve, avg_precision, int_curve = pr_rec(rel_docs, retr_docs)
         perfect_curve, perfect_int_curve = perfect_reranking(rel_docs, retr_docs, n_common)
         t_ndcg = np.add(t_ndcg, ndcg(rel_docs, retr_docs))
 
@@ -68,6 +73,7 @@ def evaluate(rel_file, retr_file, write_flag):
 
         sum_prfAIP += np.sum(perfect_int_curve, 1) / 11
         sum_prfIP = np.add(sum_prfIP, perfect_int_curve)
+        sumAP += avg_precision
 
     mean_ndcg = np.divide(t_ndcg, n_questions)
     micro_precision = rel_found / total_retrieved
@@ -76,6 +82,7 @@ def evaluate(rel_file, retr_file, write_flag):
     micro_recall = rel_found / total_relevant
     macro_recall = macro_recall / n_questions
 
+    MAP = sumAP / n_questions
     MAIP = sumAIP / n_questions
     MIP = np.divide(sumIP, n_questions)
 
@@ -87,6 +94,7 @@ def evaluate(rel_file, retr_file, write_flag):
     print 'Macro-Average Precision: ' + str("{0:.4f}".format(macro_precision))
     print 'Micro-Average Recall:    ' + str("{0:.4f}".format(micro_recall))
     print 'Macro-Average Recall:    ' + str("{0:.4f}".format(macro_recall))
+    print 'MAP:                     ' + str("{0:.4f}".format(MAP))
     print 'MAIP:                    ' + str("{0:.4f}".format(MAIP))
     print 'MIP:                     ' + str(map("{0:.4f}".format,MIP[0]))
     print 'nDCG@20:                 ' + str("{0:.4f}".format(mean_ndcg[0][0]))
@@ -103,6 +111,7 @@ def evaluate(rel_file, retr_file, write_flag):
             outfile.write(' %.4f' % (macro_precision))
             outfile.write(' %.4f' % (micro_recall))
             outfile.write(' %.4f' % (macro_recall))
+            outfile.write(' %.4f' % (MAP))
             outfile.write(' %.4f' % (MAIP))
             outfile.write(' ')
             np.savetxt(outfile, MIP, delimiter=' ', fmt='%.4f', newline=' ')
@@ -119,5 +128,5 @@ if __name__ == '__main__':
     f = open('../config.json', 'r')
     data_cfg = json.load(f)
     f.close()
-    rel_file = data_cfg["config"]["test_file"]
+    rel_file = '../' + data_cfg["config"]["test_file"]
     evaluate(rel_file, sys.argv[1], write_flag)
