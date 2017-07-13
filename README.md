@@ -5,14 +5,14 @@ This software accompanies the following paper and contains code for reproducing 
 
 
 # Instructions
-##Contents
+## Contents
 * [Dependencies](https://github.com/nlpaueb/BioIR#dependencies)
 * [Necessary Files](https://github.com/nlpaueb/BioIR#necessary-files)
 * [Experiments](https://github.com/nlpaueb/BioIR#experiments)
 * [Evaluation](https://github.com/nlpaueb/BioIR#evaluation)
 * [Experiments example](https://github.com/nlpaueb/BioIR#experiments-example)  
 
-##Dependencies
+## Dependencies
 To use this python code, you will need:
 * Python 2.7
 * [numpy](http://www.numpy.org/)
@@ -22,7 +22,7 @@ To use this python code, you will need:
 * [ijson](https://pypi.python.org/pypi/ijson)  
  * Optionally install yajl2 backend for ijson, for significantly faster json parsing.  
 
-##Necessary Files
+## Necessary Files
 In order to run these experiments, some files in a specific format, are needed:
 * Word embedding files in the BioASQ format:
  * **Types file** (types.txt)  -  contains a list of the vocabulary.
@@ -82,7 +82,7 @@ Numpy array shape: Number of Documents x Embedding Dimensions
     ```  
     ```python combine_systems.py [sys_1 results filepath] [sys_2 results filepath]```  
 
-##Evaluation  
+## Evaluation  
 You can evaluate each system with the following commands:
 ```
 cd evaluation
@@ -96,25 +96,25 @@ In order to reproduce the experimental results of the paper, you need to follow 
   https://drive.google.com/open?id=0B62bnH-apTfOS3Ruck9Ob3N1eUU  
 * You can then reproduce the experiments of the paper with the following commands:  
 
-####Retrieval
+#### Retrieval
 ```
 python produce_centroids.py 
 python knn_retrieval.py data/CentIDF.npy
 python build_annoy_index.py data/CentIDF.npy
 python ann_retrieval.py data/CentIDF.npy.100Trees.annoy
 ```
-####Reranking
+#### Reranking
 ```
 python reranking.py system_results/CentIDF.json  
 python reranking.py system_results/CentIDF_annoy_100_1000_10.json
 python reranking.py system_results/PubMed.json  
 ```
-####Hybrid
+#### Hybrid
 ```
 python combine_systems.py system_results/PubMed_RWMD_Q.json system_results/CentIDF_RWMD_Q.json
 python combine_systems.py system_results/PubMed_RWMD_Q.json system_results/CentIDF_annoy_100_1000_10_RWMD_Q.json
 ```
-####Evaluation
+#### Evaluation
 ```
 cd evaluation
 python evaluate.py ../system_results/CentIDF.json
