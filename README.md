@@ -58,7 +58,7 @@ You can download these files from the following links:
 |Stop-words file|https://drive.google.com/open?id=0B62bnH-apTfOQmdjNnJ1cG9mek0|
 |Test file (registration required)      |http://participants-area.bioasq.org/Tasks/4b/trainingDataset/|
 The above files should be placed in the data folder with the same names as above; otherwise you need to change the config.json file. 
-##Experiments
+## Experiments
 Software cosists of the following python excecutables:
 * **produce_centroids.py**  -  Produces a numpy array with the centroids of the documents contained in the dataset file and stores it in the data folder.  
 Numpy array shape: Number of Documents x Embedding Dimensions  
